@@ -330,102 +330,163 @@ body {
 </div>
 
 <script>
-// Address
-const addresses = [
-"144 / 1 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 2 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 3 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 4 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 5 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 6 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 7 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 8 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 9 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 10 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 11 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 12 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 13 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 14 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 15 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 16 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 17 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 18 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 19 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 20 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 21 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 22 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 23 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 24 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 25 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 26 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 27 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 28 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 29 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 30 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
+/* =========================================
+   TOẠ ĐỘ NHÀ
+========================================= */
 
-"106 / 47 / 1 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 2 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 3 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 4 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 5 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 6 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 7 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 8 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 9 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 10 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 11 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 12 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 13 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 14 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 15 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 16 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 17 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 18 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 19 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 20 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 21 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 22 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 23 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 24 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 25 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 26 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 27 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 28 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 29 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 30 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
+const HOME_LAT =
+10.833053123546762;
 
-"162 / 1 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 2 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 3 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 4 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 5 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 6 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 7 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 8 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 9 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 10 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 11 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 12 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 13 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 14 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 15 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 16 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 17 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 18 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 19 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 20 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 21 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 22 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 23 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 24 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 25 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 26 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 27 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 28 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 29 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 30 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh"
+const HOME_LNG =
+106.70668800826569;
+
+/* =========================================
+   ĐƯỜNG + PHƯỜNG THẬT
+========================================= */
+
+const locations = [
+
+{
+  street:"Bình Lợi",
+  ward:"Phường Bình Lợi Trung"
+},
+
+
+{
+  street:"Nguyễn Xí",
+  ward:"Phường Bình Lợi Trung"
+},
+
+{
+  street:"Đặng Thùy Trâm",
+  ward:"Phường Bình Lợi Trung"
+},
+
+{
+  street:"Nơ Trang Long",
+  ward:"Phường Bình Thạnh"
+},
+
+
+{
+  street:"Chu Văn An",
+  ward:"Phường Bình Thạnh"
+}
+
 
 ];
+
+/* =========================================
+   RANDOM SỐ NHÀ
+========================================= */
+
+function randomHouse(){
+
+  const a =
+  Math.floor(Math.random()*250)+1;
+
+  const b =
+  Math.floor(Math.random()*60)+1;
+
+  const c =
+  Math.floor(Math.random()*30)+1;
+
+  const type =
+  Math.floor(Math.random()*3);
+
+  if(type===0){
+
+    return `${a}`;
+
+  }
+
+  if(type===1){
+
+    return `${a} / ${b}`;
+
+  }
+
+  return `${a} / ${b} / ${c}`;
+
+}
+
+/* =========================================
+   RANDOM TOẠ ĐỘ 1-3KM
+========================================= */
+
+function randomNearbyPoint(){
+
+  const radius =
+  Math.random()*1000 + 3000;
+
+  const angle =
+  Math.random()*2*Math.PI;
+
+  const dx =
+  radius*Math.cos(angle);
+
+  const dy =
+  radius*Math.sin(angle);
+
+  const lat =
+  HOME_LAT + (dy/111320);
+
+  const lng =
+  HOME_LNG + (
+    dx /
+    (
+      111320 *
+      Math.cos(HOME_LAT*Math.PI/180)
+    )
+  );
+
+  return {lat,lng};
+
+}
+
+/* =========================================
+   RANDOM ĐỊA CHỈ
+========================================= */
+
+function randomAddress(){
+
+  const point =
+  randomNearbyPoint();
+
+  const location =
+  locations[
+    Math.floor(
+      Math.random()*locations.length
+    )
+  ];
+
+  const house =
+  randomHouse();
+
+  const finalAddress =
+  `${house} ${location.street} , ${location.ward}, Tp. Hồ Chí Minh`;
+
+  document.getElementById("address")
+  .innerText = finalAddress;
+
+  console.log(point);
+
+}
+
+/* =========================================
+   COPY
+========================================= */
+
+function copyAddress(){
+
+  navigator.clipboard.writeText(
+    document.getElementById("address").innerText
+  );
+
+  alert("Đã copy!");
+
+}
+
 
 function randomAddress(){
   const i = Math.floor(Math.random()*addresses.length);
