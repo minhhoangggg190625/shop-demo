@@ -1,4 +1,4 @@
-
+ 
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -330,143 +330,166 @@ body {
 </div>
 
 <script>
-// Address
-const addresses = [
-"144 / 1 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 2 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 3 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 4 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 5 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 6 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 7 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 8 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 9 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 10 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 11 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 12 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 13 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 14 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 15 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 16 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 17 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 18 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 19 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 20 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 21 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 22 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 23 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 24 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 25 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 26 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 27 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 28 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 29 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"144 / 30 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
 
-"106 / 47 / 1 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 2 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 3 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 4 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 5 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 6 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 7 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 8 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 9 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 10 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 11 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 12 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 13 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 14 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 15 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 16 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 17 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 18 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 19 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 20 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 21 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 22 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 23 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 24 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 25 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 26 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 27 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 28 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 29 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"106 / 47 / 30 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
+/* =========================================
+   TOẠ ĐỘ NHÀ
+========================================= */
 
-"162 / 1 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 2 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 3 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 4 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 5 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 6 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 7 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 8 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 9 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 10 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 11 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 12 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 13 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 14 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 15 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 16 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 17 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 18 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 19 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 20 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 21 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 22 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 23 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 24 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 25 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 26 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 27 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 28 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 29 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh",
-"162 / 30 Bình Lợi , Phường Bình Lợi Trung, Tp. Hồ Chí Minh"
+const HOME_LAT =
+10.833053123546762;
+
+const HOME_LNG =
+106.70668800826569;
+
+/* =========================================
+   ĐƯỜNG + PHƯỜNG THẬT
+========================================= */
+
+const locations = [
+
+{
+  street:"Bình Lợi",
+  ward:"Phường Bình Lợi Trung"
+},
+
+
+
+{
+  street:"Đặng Thùy Trâm",
+  ward:"Phường Bình Lợi Trung"
+},
+
+
 
 ];
 
-function randomAddress(){
-  const i = Math.floor(Math.random()*addresses.length);
-  document.getElementById("address").innerText = addresses[i];
+/* =========================================
+   RANDOM SỐ NHÀ
+========================================= */
+
+function randomHouse(){
+
+  const a =
+  Math.floor(Math.random()*250)+1;
+
+  const b =
+  Math.floor(Math.random()*60)+1;
+
+  const c =
+  Math.floor(Math.random()*30)+1;
+
+  const type =
+  Math.floor(Math.random()*3);
+
+  if(type===0){
+
+    return `${a}`;
+
+  }
+
+  if(type===1){
+
+    return `${a} / ${b}`;
+
+  }
+
+  return `${a} / ${b} / ${c}`;
+
 }
+
+/* =========================================
+   RANDOM TOẠ ĐỘ 1-3KM
+========================================= */
+
+function randomNearbyPoint(){
+
+  const radius =
+  Math.random()*1000 + 3000;
+
+  const angle =
+  Math.random()*2*Math.PI;
+
+  const dx =
+  radius*Math.cos(angle);
+
+  const dy =
+  radius*Math.sin(angle);
+
+  const lat =
+  HOME_LAT + (dy/111320);
+
+  const lng =
+  HOME_LNG + (
+    dx /
+    (
+      111320 *
+      Math.cos(HOME_LAT*Math.PI/180)
+    )
+  );
+
+  return {lat,lng};
+
+}
+
+/* =========================================
+   RANDOM ĐỊA CHỈ
+========================================= */
+
+function randomAddress(){
+
+  const point =
+  randomNearbyPoint();
+
+  const location =
+  locations[
+    Math.floor(
+      Math.random()*locations.length
+    )
+  ];
+
+  const house =
+  randomHouse();
+
+  const finalAddress =
+  `${house} ${location.street} , ${location.ward}, Tp. Hồ Chí Minh`;
+
+  document.getElementById("address")
+  .innerText = finalAddress;
+
+  console.log(point);
+
+}
+
+/* =========================================
+   COPY
+========================================= */
 
 function copyAddress(){
-  navigator.clipboard.writeText(document.getElementById("address").innerText);
-  alert("Đã copy!");
-}
 
-// Format sold
-function formatSold(n){return n>=1000?(n/1000).toFixed(1)+"k":n;}
+  navigator.clipboard.writeText(
+    document.getElementById("address").innerText
+  );
+
+  alert("Đã copy!");
+
+}
 
 // Products
 const products = [
 
   
-  { name: "Samsung Galaxy A07 4GB/128GB", price: 2200000, rating: 4.3, sold: 950, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlac3o5eghs204.webp", link: "https://s.shopee.vn/6VJlDpkC1x" },	
-  
-{ name: "Xiaomi Redmi 15C 4GB/128GB", price: 2590000, rating: 4.6, sold: 2000, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmu6p26yrair49.webp", link: "https://s.shopee.vn/1VvWLLR1uR" },	  
-  
-{ name: "Xiaomi Redmi 15C 6GB/128GB", price: 3050000, rating: 4.4, sold: 1300, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mllmnofzzcas10.webp", link: "https://s.shopee.vn/10yqI3V97z" },	
-  
-  { name: "Xiaomi Redmi 15 8GB/128GB", price: 3400000, rating: 4.5, sold: 1400, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mggb30jcrh8q9f.webp", link: "https://s.shopee.vn/50W1mLNucO" },	
-  
-    
-  
-{ name: "Samsung Galaxy A17 LTE 8/128", price: 3550000, rating: 4.1, sold: 1200, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mfazv5z71lvvde.webp", link: "https://s.shopee.vn/2BAWoaZhIH" },	
-  
-  { name: "Xiaomi Redmi Note 15 4G 6GB/128GB", price: 4000000, rating: 4.4, sold: 1300, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjb16xdtdwqsa3.webp", link: "https://s.shopee.vn/qfZeLMpHt" }	,
-  
+{ name: "Samsung Galaxy A07 4GB/128GB", price: 2200000, rating: 4.3, sold: 950, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlac3o5eghs204.webp", link: "https://s.shopee.vn/6VJlDpkC1x" },	
+{ name: "Xiaomi Redmi 15C 4GB/128GB", price: 2590000, rating: 4.6, sold: 2000, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmu6p26yrair49.webp", link: "https://s.shopee.vn/1VvWLLR1uR" },	
+{ name: "Xiaomi Redmi 15C 6GB/128GB", price: 3050000, rating: 4.4, sold: 1300, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mgd6a8wd0gena3.webp", link: "https://s.shopee.vn/AAEUmB3CeE" },	
+ { name: "Samsung Galaxy A17 LTE 8/128", price: 3550000, rating: 4.2, sold: 900, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mejqqcxi4nwm2e.webp", link: "https://s.shopee.vn/50VLT8PQBQ" },	
+{ name: "Xiaomi Redmi Note 15 4G 6GB/128GB", price: 4000000, rating: 4.4, sold: 1300, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn6m9s5j16va69.webp", link: "https://s.shopee.vn/3qJMNSwq91" }	,
+  { name: "Samsung Galaxy A17 5G 8/128", price: 4400000, rating: 4.0, sold: 1400, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mf3scvsjmrkd8c.webp", link: "https://s.shopee.vn/7fVTMm4DOZ" },	
 { name: "Samsung Galaxy A17 5G 8/128", price: 4400000, rating: 4.0, sold: 1400, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmzh0cummqyq8f.webp", link: "https://s.shopee.vn/1qY6reD3fI" },	
-  
-{ name: " Oppo A5i Pro 8GB/128GB ", price: 4600000, rating: 4.2, sold: 1500, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn2dkocmff2c50.webp", link: "https://s.shopee.vn/809W3l7aJB " },
-  
-  { name: "Samsung Galaxy A26 5G 8GB/128GB ", price: 4600000, rating: 4.2, sold: 1500, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mk4u98tiy7er2f.webp", link: "https://s.shopee.vn/2g72dlBIof" },	
-{ name: "Samsung Galaxy A56 5G 8GB/128GB", price: 6650000, rating: 4.7, sold: 1100, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlhnnyd554ozec.webp", link: "https://s.shopee.vn/70Fwo66ddC" }	  
-  
-
- 
+{ name: "Samsung Galaxy A26 5G 8GB/128GB ", price: 4600000, rating: 4.2, sold: 1500, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mk4u98tiy7er2f.webp", link: "https://s.shopee.vn/2g72dlBIof" },	
+{ name: " Oppo A5i Pro 8GB/128GB ", price: 4600000, rating: 4.2, sold: 1500, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn2dkocmff2c50.webp", link: "https://s.shopee.vn/809W3l7aJB " },	
+{ name: "Samsung Galaxy A36 5G 8GB/128GB", price: 5250000 , rating: 4.5, sold: 800, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mi7p0tcvwcu847.webp", link: "https://s.shopee.vn/5q3yD0drR5" },	
+{ name: "Samsung Galaxy A36 5G 8GB/128GB", price: 5250000 , rating: 4.5, sold: 800, image: "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mf3r3rwea70r6b.webp", link: "https://s.shopee.vn/7ppDoJJb9d" },	
+{ name: "Samsung Galaxy A56 5G 8GB/128GB", price: 6880000, rating: 4.7, sold: 1100, image: "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkc0hc1m7sw2f9.webp", link: "https://s.shopee.vn/50VuUVlG6Y" }	
 ];
 // Animate sold
 function animateCount(el,val){
